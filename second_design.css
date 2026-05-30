@@ -1,0 +1,54 @@
+/* ============================================================
+   2nd Design - money/buying-guide article widgets
+   Host at: https://touhidul002.github.io/second_design/style.css
+   ============================================================ */
+:root{
+  --sd-ink:#1d1714; --sd-muted:#6f6058; --sd-soft:#8a7a70;
+  --sd-line:#e7e0d9; --sd-accent:#a8551f; --sd-accent-d:#823f12; --sd-crema:#d8a441;
+  --sd-good:#2f7d52; --sd-good-bg:#f0f7f2; --sd-good-br:#d7e9dd;
+  --sd-bad:#b23b34; --sd-bad-bg:#fbf1f0; --sd-bad-br:#f0dad8;
+  --sd-radius:14px; --sd-shadow:0 1px 2px rgba(40,25,15,.05),0 10px 30px rgba(40,25,15,.06);
+}
+.sd-tbl{overflow-x:auto;margin:1.2em 0;border:1px solid var(--sd-line);border-radius:12px}
+table.sd-toptable{border-collapse:collapse;width:100%;font-size:.95rem;min-width:520px;margin:0}
+.sd-toptable th{background:#3a2a1e;color:#fff;text-align:left;font-size:.8rem;letter-spacing:.03em;text-transform:uppercase;padding:11px 14px}
+.sd-toptable td{padding:11px 14px;border-bottom:1px solid var(--sd-line);vertical-align:top;color:var(--sd-ink)}
+.sd-toptable tr:nth-child(even) td{background:#faf6f2}
+.sd-toptable tr:last-child td{border-bottom:0}
+.sd-toptable .sd-pick{font-weight:700;color:var(--sd-accent-d);white-space:nowrap}
+.sd-card{background:#fff;border:1px solid var(--sd-line);border-radius:var(--sd-radius);box-shadow:var(--sd-shadow);padding:22px;margin:1.5em 0 2.2em}
+.sd-award{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,var(--sd-accent),var(--sd-accent-d));padding:5px 13px;border-radius:999px;margin-bottom:6px}
+.sd-title{margin:.15em 0 .6em;font-size:1.3rem;font-weight:700;color:var(--sd-ink)}
+.sd-top{display:flex;gap:22px;align-items:flex-start;flex-wrap:wrap}
+.sd-shot{flex:0 0 200px;max-width:200px;background:#fff;border:1px solid var(--sd-line);border-radius:12px;padding:14px;text-align:center}
+.sd-shot img{max-width:100%;height:auto;mix-blend-mode:multiply}
+.sd-meta{flex:1 1 320px;min-width:260px}
+table.sd-spec-table{width:100%;border-collapse:collapse;font-size:.93rem;border:1px solid var(--sd-line);border-radius:10px;overflow:hidden;margin:0}
+.sd-spec-table td{padding:9px 13px;border-bottom:1px solid var(--sd-line)}
+.sd-spec-table tr:last-child td{border-bottom:0}
+.sd-spec-table tr:nth-child(even){background:#faf6f2}
+.sd-spec-table td.k{color:var(--sd-soft);width:46%}
+.sd-spec-table td.v{font-weight:700;text-align:right;color:var(--sd-ink)}
+.sd-spec-cta{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;background:#fff;border:1.5px solid var(--sd-accent);color:var(--sd-accent-d);font-weight:700;padding:10px 16px;border-radius:9px;font-size:.92rem;text-decoration:none}
+.sd-spec-cta:hover{background:var(--sd-accent);color:#fff}
+.sd-pc{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 4px}
+.sd-pc>div{border-radius:11px;padding:13px 15px}
+.sd-pros{background:var(--sd-good-bg);border:1px solid var(--sd-good-br)}
+.sd-cons{background:var(--sd-bad-bg);border:1px solid var(--sd-bad-br)}
+.sd-pc h4{margin:0 0 7px;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.sd-pros h4{color:var(--sd-good)}
+.sd-cons h4{color:var(--sd-bad)}
+.sd-pc ul{list-style:none;padding:0;margin:0;font-size:.93rem}
+.sd-pc li{padding-left:1.5em;position:relative;margin:.34em 0;color:var(--sd-ink)}
+.sd-pros li::before{content:"\2713";position:absolute;left:0;color:var(--sd-good);font-weight:800}
+.sd-cons li::before{content:"\2715";position:absolute;left:0;color:var(--sd-bad);font-weight:800}
+.sd-verdict{margin-top:16px}
+.sd-verdict p{margin:0 0 .8em;line-height:1.7}
+.sd-media{margin:18px 0 4px}
+.sd-media-label{font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--sd-soft);margin:0 0 8px}
+.sd-video{position:relative;width:100%;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#000;border:1px solid var(--sd-line)}
+.sd-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.sd-buy-wrap{text-align:center;margin-top:20px}
+.sd-buy{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(90deg,#f0b429,#e08a1e);color:#231403;font-weight:800;padding:13px 26px;border-radius:10px;font-size:1rem;text-decoration:none;box-shadow:0 6px 16px rgba(224,138,30,.28)}
+.sd-buy:hover{filter:brightness(1.04);color:#231403}
+@media(max-width:560px){.sd-pc{grid-template-columns:1fr}.sd-shot{flex-basis:100%;max-width:100%}}
