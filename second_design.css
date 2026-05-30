@@ -1,6 +1,6 @@
 /* ============================================================
    2nd Design - money/buying-guide article widgets
-   Host at: https://touhidul002.github.io/second_design/style.css
+   Host at: https://islamfakrul.github.io/buying_guide_css/second_design.css
    ============================================================ */
 :root{
   --sd-ink:#1d1714; --sd-muted:#6f6058; --sd-soft:#8a7a70;
@@ -23,12 +23,12 @@ table.sd-toptable{border-collapse:collapse;width:100%;font-size:.95rem;min-width
 .sd-shot{flex:0 0 200px;max-width:200px;background:#fff;border:1px solid var(--sd-line);border-radius:12px;padding:14px;text-align:center}
 .sd-shot img{max-width:100%;height:auto;mix-blend-mode:multiply}
 .sd-meta{flex:1 1 320px;min-width:260px}
-table.sd-spec-table{width:100%;border-collapse:collapse;font-size:.93rem;border:1px solid var(--sd-line);border-radius:10px;overflow:hidden;margin:0}
-.sd-spec-table td{padding:9px 13px;border-bottom:1px solid var(--sd-line)}
-.sd-spec-table tr:last-child td{border-bottom:0}
-.sd-spec-table tr:nth-child(even){background:#faf6f2}
-.sd-spec-table td.k{color:var(--sd-soft);width:46%}
-.sd-spec-table td.v{font-weight:700;text-align:right;color:var(--sd-ink)}
+.sd-specs{border:1px solid var(--sd-line);border-radius:10px;overflow:hidden;margin:0}
+.sd-spec-row{display:flex;justify-content:space-between;gap:12px;padding:10px 13px;border-bottom:1px solid var(--sd-line);font-size:.93rem}
+.sd-spec-row:last-child{border-bottom:0}
+.sd-spec-row:nth-child(odd){background:#faf6f2}
+.sd-spec-k{color:var(--sd-soft);flex:1.4}
+.sd-spec-v{font-weight:700;color:var(--sd-ink);text-align:right;flex:1.2}
 .sd-spec-cta{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;background:#fff;border:1.5px solid var(--sd-accent);color:var(--sd-accent-d);font-weight:700;padding:10px 16px;border-radius:9px;font-size:.92rem;text-decoration:none}
 .sd-spec-cta:hover{background:var(--sd-accent);color:#fff}
 .sd-pc{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 4px}
@@ -48,7 +48,21 @@ table.sd-spec-table{width:100%;border-collapse:collapse;font-size:.93rem;border:
 .sd-media-label{font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--sd-soft);margin:0 0 8px}
 .sd-video{position:relative;width:100%;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#000;border:1px solid var(--sd-line)}
 .sd-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.sd-card .gallery-section{margin-top:4px}
+.sd-card .gallery-container{max-width:760px;margin:0 auto;padding:6px;background:#fff;border:1px solid var(--sd-line);border-radius:10px;box-shadow:var(--sd-shadow)}
+.sd-card .main-image-container{position:relative;margin-bottom:12px;border-radius:8px;overflow:hidden;background:#fff}
+.sd-card .main-image{width:100%;max-height:460px;object-fit:contain;cursor:pointer;display:block}
+.sd-card .nav-button{position:absolute;top:50%;transform:translateY(-50%);background:rgba(58,42,30,.66);color:#fff;border:none;padding:12px 11px;cursor:pointer;font-size:18px;border-radius:6px;line-height:1;z-index:2}
+.sd-card .nav-button:hover{background:var(--sd-accent)}
+.sd-card .nav-button.prev{left:10px}
+.sd-card .nav-button.next{right:10px}
+.sd-card .gallery-section .caption{text-align:center;color:var(--sd-soft);font-style:italic;font-size:.85rem;margin:8px 0}
+.sd-card .thumbnails{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:12px}
+.sd-card .thumbnail-container{cursor:pointer;border:2px solid var(--sd-line);border-radius:6px;overflow:hidden;transition:all .2s ease;line-height:0}
+.sd-card .thumbnail-container:hover{border-color:var(--sd-crema);transform:translateY(-2px)}
+.sd-card .thumbnails img,.sd-card .thumbnail{width:76px;height:60px;object-fit:cover;display:block;cursor:pointer;border:0}
+.sd-card .thumbnail.active{outline:2px solid var(--sd-accent);outline-offset:-2px}
 .sd-buy-wrap{text-align:center;margin-top:20px}
 .sd-buy{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(90deg,#f0b429,#e08a1e);color:#231403;font-weight:800;padding:13px 26px;border-radius:10px;font-size:1rem;text-decoration:none;box-shadow:0 6px 16px rgba(224,138,30,.28)}
 .sd-buy:hover{filter:brightness(1.04);color:#231403}
-@media(max-width:560px){.sd-pc{grid-template-columns:1fr}.sd-shot{flex-basis:100%;max-width:100%}}
+@media(max-width:560px){.sd-pc{grid-template-columns:1fr}.sd-shot{flex-basis:100%;max-width:100%}.sd-card .thumbnails img,.sd-card .thumbnail{width:60px;height:48px}}
