@@ -1,5 +1,9 @@
-/* 2nd Design - money/buying-guide article widgets
-   Host at: https://islamfakrul.github.io/buying_guide_css/second_design.css */
+/* ============================================================
+   2nd Design - money/buying-guide article widgets
+   Host at: https://islamfakrul.github.io/buying_guide_css/second_design.css
+   Gallery styles are self-contained here (driven by the hosted gallery.js).
+   ============================================================ */
+
 :root{
   --sd-ink:#1d1714; --sd-muted:#6f6058; --sd-soft:#8a7a70;
   --sd-line:#e7e0d9; --sd-accent:#a8551f; --sd-accent-d:#823f12; --sd-crema:#d8a441;
@@ -7,20 +11,25 @@
   --sd-bad:#b23b34; --sd-bad-bg:#fbf1f0; --sd-bad-br:#f0dad8;
   --sd-radius:14px; --sd-shadow:0 1px 2px rgba(40,25,15,.05),0 10px 30px rgba(40,25,15,.06);
 }
-.sd-tbl{margin:0}
+
+/* ---- Comparison table: dynamic widths, scrolls on mobile ----
+   The table stays a real <table> so headers and cells share ONE column model
+   (always aligned) and table-layout:auto sizes each column to its content.
+   The .sd-table-wrap div (not the table) provides horizontal scroll, and
+   min-width keeps columns readable before the wrapper kicks in. */
 .sd-pick{font-weight:700;white-space:nowrap}
-table{width:100%;border-collapse:collapse;overflow-x:auto;display:block;-webkit-overflow-scrolling:touch;background:#fff;margin:1.2em 0}
-thead,tbody{display:table;width:100%}
-tr{display:table-row}
-th,td{display:table-cell}
-th{background:#2c3e50;color:#fff;font-weight:600;text-align:left;padding:14px 18px;border:1px solid #34495e;min-width:160px;white-space:nowrap}
-td{padding:13px 18px;border:1px solid #ddd;vertical-align:top;min-width:160px;white-space:normal;word-wrap:break-word;line-height:1.55}
-tbody tr:nth-child(odd){background:#f8f9fa}
-tbody tr:nth-child(even){background:#fff}
-tbody tr:hover{background:#eef4fb}
-table::-webkit-scrollbar{height:10px}
-table::-webkit-scrollbar-track{background:#f1f1f1;border-radius:5px}
-table::-webkit-scrollbar-thumb{background:#aaa;border-radius:5px}
+.sd-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:1.2em 0;border-radius:8px}
+.sd-table-wrap table{width:100%;min-width:560px;border-collapse:collapse;background:#fff;table-layout:auto;margin:0}
+.sd-table-wrap th{background:#2c3e50;color:#fff;font-weight:600;text-align:left;padding:14px 18px;border:1px solid #34495e}
+.sd-table-wrap td{padding:13px 18px;border:1px solid #ddd;vertical-align:top;line-height:1.55;word-wrap:break-word}
+.sd-table-wrap tbody tr:nth-child(odd){background:#f8f9fa}
+.sd-table-wrap tbody tr:nth-child(even){background:#fff}
+.sd-table-wrap tbody tr:hover{background:#eef4fb}
+.sd-table-wrap::-webkit-scrollbar{height:10px}
+.sd-table-wrap::-webkit-scrollbar-track{background:#f1f1f1;border-radius:5px}
+.sd-table-wrap::-webkit-scrollbar-thumb{background:#aaa;border-radius:5px}
+
+/* ---- Product card ---- */
 .sd-card{background:#fff;border:1px solid var(--sd-line);border-radius:var(--sd-radius);box-shadow:var(--sd-shadow);padding:22px;margin:1.5em 0 2.2em}
 .sd-award{display:inline-block;font-size:.74rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#fff;background:linear-gradient(90deg,var(--sd-accent),var(--sd-accent-d));padding:5px 13px;border-radius:999px;margin-bottom:6px}
 .sd-title{margin:.15em 0 .6em;font-size:1.3rem;font-weight:700;color:var(--sd-ink)}
@@ -28,6 +37,8 @@ table::-webkit-scrollbar-thumb{background:#aaa;border-radius:5px}
 .sd-shot{flex:1 1 300px;max-width:430px;background:#fff;border:1px solid var(--sd-line);border-radius:8px;padding:16px;text-align:center;display:flex;align-items:center;justify-content:center}
 .sd-shot img{max-width:100%;max-height:380px;height:auto;mix-blend-mode:multiply}
 .sd-meta{flex:1 1 300px;min-width:280px;display:flex;flex-direction:column}
+
+/* ---- Spec list + CTA: kept in the original (Main) design look ---- */
 .sd-specs{border:1px solid #e1e1e1;border-radius:8px;overflow:hidden;margin:0}
 .sd-spec-row{display:flex;gap:10px;padding:13px 14px;font-size:1rem;background:#fff}
 .sd-spec-row:nth-child(odd){background:#f9f9f9}
@@ -35,6 +46,8 @@ table::-webkit-scrollbar-thumb{background:#aaa;border-radius:5px}
 .sd-spec-v{color:#4a5568;flex:1.4;font-weight:400}
 .sd-spec-cta{align-self:center;display:inline-flex;align-items:center;justify-content:center;gap:10px;margin:20px 0 4px;background:linear-gradient(135deg,#0056b3,#003d82);color:#fff;border:2px solid rgba(255,255,255,.2);font-weight:600;padding:14px 34px;border-radius:30px;font-size:1.05rem;text-decoration:none;box-shadow:0 4px 12px rgba(0,86,179,.25)}
 .sd-spec-cta:hover{transform:translateY(-2px);box-shadow:0 8px 18px rgba(0,86,179,.35);color:#fff;text-decoration:none}
+
+/* ---- Strengths / Trade-offs ---- */
 .sd-pc{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:18px 0 4px}
 .sd-pc>div{border-radius:11px;padding:13px 15px}
 .sd-pros{background:var(--sd-good-bg);border:1px solid var(--sd-good-br)}
@@ -46,12 +59,18 @@ table::-webkit-scrollbar-thumb{background:#aaa;border-radius:5px}
 .sd-pc li{padding-left:1.5em;position:relative;margin:.34em 0;color:var(--sd-ink)}
 .sd-pros li::before{content:"\2713";position:absolute;left:0;color:var(--sd-good);font-weight:800}
 .sd-cons li::before{content:"\2715";position:absolute;left:0;color:var(--sd-bad);font-weight:800}
+
+/* ---- Verdict ---- */
 .sd-verdict{margin-top:16px}
 .sd-verdict p{margin:0 0 .8em;line-height:1.7}
+
+/* ---- Media wrapper (video / gallery) ---- */
 .sd-media{margin:18px 0 4px}
 .sd-media-label{font-size:.78rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--sd-soft);margin:0 0 8px}
 .sd-video{position:relative;width:100%;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#000;border:1px solid var(--sd-line)}
 .sd-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+/* ---- Image gallery (markup driven by hosted gallery.js) ---- */
 .sd-card .gallery-section{margin-top:4px}
 .sd-card .gallery-container{max-width:760px;margin:0 auto;padding:6px;background:#fff;border:1px solid var(--sd-line);border-radius:10px;box-shadow:var(--sd-shadow)}
 .sd-card .main-image-container{position:relative;margin-bottom:12px;border-radius:8px;overflow:hidden;background:#fff}
@@ -66,7 +85,14 @@ table::-webkit-scrollbar-thumb{background:#aaa;border-radius:5px}
 .sd-card .thumbnail-container:hover{border-color:var(--sd-crema);transform:translateY(-2px)}
 .sd-card .thumbnails img,.sd-card .thumbnail{width:76px;height:60px;object-fit:cover;display:block;cursor:pointer;border:0}
 .sd-card .thumbnail.active{outline:2px solid var(--sd-accent);outline-offset:-2px}
+
+/* ---- Centered buy button ---- */
 .sd-buy-wrap{text-align:center;margin-top:20px}
 .sd-buy{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(90deg,#f0b429,#e08a1e);color:#231403;font-weight:800;padding:13px 26px;border-radius:10px;font-size:1rem;text-decoration:none;box-shadow:0 6px 16px rgba(224,138,30,.28)}
 .sd-buy:hover{filter:brightness(1.04);color:#231403}
-@media(max-width:560px){.sd-pc{grid-template-columns:1fr}.sd-shot{flex-basis:100%;max-width:100%}.sd-card .thumbnails img,.sd-card .thumbnail{width:60px;height:48px}}
+
+@media(max-width:560px){
+  .sd-pc{grid-template-columns:1fr}
+  .sd-shot{flex-basis:100%;max-width:100%}
+  .sd-card .thumbnails img,.sd-card .thumbnail{width:60px;height:48px}
+}
